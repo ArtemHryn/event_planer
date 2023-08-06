@@ -13,7 +13,7 @@ import { Box } from "../../../Common/Box";
 
 import defaultPic from "images/event.jpg";
 
-const EventCard = ({ card }) => {
+const EventCard = ({ card, setfilteredByCategory }) => {
   const [showMoreButton, setShowMoreButton] = useState(false);
   const {
     title,
@@ -44,7 +44,9 @@ const EventCard = ({ card }) => {
           gridGap={["12px"]}
         >
           {" "}
-          <Filters>{category}</Filters>
+          <Filters as="button" onClick={() => setfilteredByCategory(category)}>
+            {category}
+          </Filters>
           <Filters priority={priority}>{priority}</Filters>
         </Box>
         <Box
@@ -64,7 +66,12 @@ const EventCard = ({ card }) => {
           <DateAndPlace>{location}</DateAndPlace>
         </Box>
       </Box>
-      <Box p={["16px"]} display="flex" flexDirection="column" gridGap={['16px']}>
+      <Box
+        p={["16px"]}
+        display="flex"
+        flexDirection="column"
+        gridGap={["16px"]}
+      >
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
         {showMoreButton && (

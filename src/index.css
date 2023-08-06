@@ -43,6 +43,9 @@ button {
   padding: 0;
 }
 
+button:hover {
+  scale: 1.05;
+}
 a {
   text-decoration: none;
 }

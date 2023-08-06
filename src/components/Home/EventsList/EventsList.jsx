@@ -4,7 +4,7 @@ import EventCard from "./EventCard/EventCard";
 import { List } from "./EventList.styled";
 import { useEffect, useState } from "react";
 
-const EventsList = ({ events }) => {
+const EventsList = ({ events, setfilteredByCategory }) => {
   const [searchedEvents, setSearchedEvents] = useState([]);
   const [searchParams] = useSearchParams();
   const search = searchParams.get("search");
@@ -22,7 +22,11 @@ const EventsList = ({ events }) => {
   return (
     <List>
       {searchedEvents.map((card) => (
-        <EventCard key={card.id} card={card} />
+        <EventCard
+          key={card.id}
+          card={card}
+          setfilteredByCategory={setfilteredByCategory}
+        />
       ))}
     </List>
   );

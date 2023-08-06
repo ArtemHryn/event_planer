@@ -71,7 +71,10 @@ const Home = () => {
         filterBySort={filterBySort}
         setFilterBySort={setFilterBySort}
       />
-      <EventsList events={filteredEvents()} />
+      <EventsList
+        events={filteredEvents()}
+        setfilteredByCategory={setfilteredByCategory}
+      />
     </Container>
   );
 };

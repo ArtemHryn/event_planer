@@ -32,10 +32,11 @@ export const Filters = styled.p`
   background: ${(p) => p.theme.colors.white};
 
   color: ${setPriorityColor};
+  font-family: Poppins;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-
+  transition: all 0.3s ease;
   ${color}
   ${boxShadow}
 `;
