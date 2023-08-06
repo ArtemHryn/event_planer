@@ -5,11 +5,11 @@ export const LinkBack = styled.button`
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #7b61ff;
+  color: ${(p) => p.theme.colors.main};
   font-family: Poppins;
-  font-size: 14px;
+  font-size: ${(p) => p.theme.fontSizes.body};
   font-style: normal;
-  font-weight: 500;
+  font-weight: ${(p) => p.theme.fontWeights.medium};
   line-height: normal;
   margin-bottom: 24px;
   transition: all 1s ease;
@@ -25,8 +25,8 @@ export const LinkBackIcon = styled(BiLeftArrowAlt)`
 `;
 
 export const PageTitle = styled.h2`
-  color: #3f3f3f;
+  color: ${(p) => p.theme.colors.additional};
   font-size: 24px;
-  font-weight: 600;
+  font-weight: ${(p) => p.theme.fontWeights.semibold};
   line-height: 1;
 `;

@@ -12,7 +12,7 @@ export const FilterList = styled.ul`
 
 export const List = styled.ul`
   border-radius: 8px;
-  background: #fff;
+  background: ${(p) => p.theme.colors.white};
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   width: 158px;
   ${layout}
@@ -48,7 +48,7 @@ export const FilterListButton = styled.button`
 
 export const FilterListHeader = styled.p`
   padding: 16px 24px;
-  color: #7b61ff;
+  color: ${(p) => p.theme.colors.main};
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
@@ -59,7 +59,7 @@ export const FilterListHeader = styled.p`
 
 export const ChoseFilter = styled.p`
   display: none;
-  color: #7b61ff;
+  color: ${(p) => p.theme.colors.main};
 
   font-size: 16px;
   font-weight: 500;
@@ -77,7 +77,7 @@ export const FilterButton = styled.button`
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  background: #fff;
+  background: ${(p) => p.theme.colors.white};
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
   padding: 16px;
   transition: all 250ms linear;

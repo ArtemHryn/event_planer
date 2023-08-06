@@ -6,7 +6,7 @@ const Button = styled.button`
   align-items: center;
   width: 108px;
   height: 32px;
-  font-family: Poppins;
+  font-family: ${(p) => p.theme.fonts.main};
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -20,12 +20,12 @@ const Button = styled.button`
 `;
 
 export const FilledBtn = styled(Button)`
-  background-color: #7b61ff;
-  color: #fff;
+  background-color: ${(p) => p.theme.colors.main};
+  color: ${(p) => p.theme.colors.white};
 `;
 
 export const OutlineBtn = styled(Button)`
-  border: 1px solid #7b61ff;
+  border: 1px solid ${(p) => p.theme.colors.main};
   background-color: transparent;
-  color: #7b61ff;
+  color: ${(p) => p.theme.colors.main};
 `;

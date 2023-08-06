@@ -32,9 +32,9 @@ export const FormLabel = styled.label`
   flex-direction: column;
   gap: 6px;
 
-  color: #7b61ff;
-  font-family: Poppins;
-  font-size: 16px;
+  color: ${(p) => p.theme.colors.main};
+  font-family: ${(p) => p.theme.fonts.main};
+  font-size: ${(p) => p.theme.fontSizes.medium};
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.4px;
@@ -48,26 +48,26 @@ export const FormLabel = styled.label`
     padding: 8px 12px;
   }
   & > .p-dropdown-label {
-    color: #3f3f3f;
-    font-family: Poppins;
-    font-size: 16px;
+    color: ${(p) => p.theme.colors.additional};
+    font-family: ${(p) => p.theme.fonts.main};
+    font-size: ${(p) => p.theme.fontSizes.medium};
     font-weight: 400;
     line-height: 1.5;
   }
   & > .error > input,
   & > .error {
-    border-color: #ff2b77;
+    border-color: ${(p) => p.theme.colors.hightPriority};
   }
 `;
 
 export const FormInput = styled.input`
   border-radius: 8px;
-  border: 1px solid #aca7c3;
+  border: 1px solid ${(p) => p.theme.colors.inActive};
   padding: 16px 36px 16px 12px;
 
-  color: #3f3f3f;
-  font-family: Poppins;
-  font-size: 16px;
+  color: ${(p) => p.theme.colors.additional};
+  font-family: ${(p) => p.theme.fonts.main};
+  font-size: ${(p) => p.theme.fontSizes.medium};
   font-weight: 400;
   line-height: 1.5;
   resize: none;
@@ -85,13 +85,13 @@ export const EventFormButton = styled.button`
   gap: 16px;
 
   border-radius: 8px;
-  background: #7b61ff;
+  background: ${(p) => p.theme.colors.main};
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
 
-  color: #fff;
-  font-family: Poppins;
-  font-size: 16px;
-  font-weight: 500;
+  color: ${(p) => p.theme.colors.white};
+  font-family: ${(p) => p.theme.fonts.main};
+  font-size: ${(p) => p.theme.fontSizes.medium};
+  font-weight: ${(p) => p.theme.fontWeights.medium};
   line-height: 1;
   @media screen and (min-width: ${(p) => p.theme.sizes.tablet}) {
     width: 193px;
@@ -107,7 +107,7 @@ export const test = styled.p`
 `;
 
 export const Error = styled.p`
-  color: #ff2b77;
+  color: ${(p) => p.theme.colors.hightPriority};
   text-align: right;
   font-size: 12px;
   line-height: 1.33;
@@ -122,7 +122,7 @@ export const CleanupBtn = styled.button`
   right: 12px;
   width: 24px;
   height: 24px;
-  color: #7b61ff;
+  color: ${(p) => p.theme.colors.main};
   transition: all 0.3s ease;
   ${color}
   &:hover,

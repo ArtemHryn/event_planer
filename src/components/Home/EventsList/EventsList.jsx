@@ -12,7 +12,8 @@ const EventsList = ({ events }) => {
     const filteredByTitleOrDesc = search
       ? events.filter(
           ({ title, description }) =>
-            title.includes(search) || description.includes(search)
+            title.toLowerCase().includes(search.toLowerCase()) ||
+            description.toLowerCase().includes(search.toLowerCase())
         )
       : events;
     setSearchedEvents(filteredByTitleOrDesc);

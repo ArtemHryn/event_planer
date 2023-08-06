@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Box } from "../components/Common/Box";
 import EventsList from "../components/Home/EventsList/EventsList";
 import Filter from "../components/Home/Filters/Filters";
 import { getAllEvents } from "helper/api";
 import { getFilterFromLocalStorage } from "helper/localStorage";
 import { CATEGORY, SORTED } from "helper/constantes";
+import Container from "components/Common/Container/Container";
 
 const Home = () => {
   const [events, setEvents] = useState([]);
@@ -64,19 +64,15 @@ const Home = () => {
   };
 
   return (
-    <main>
-      <Box as="section" py={["40px"]}>
-        <Box maxWidth={["320px", "768px", "1280px"]} m="0 auto" px={["24px"]}>
-          <Filter
-            filteredByCategory={filteredByCategory}
-            setfilteredByCategory={setfilteredByCategory}
-            filterBySort={filterBySort}
-            setFilterBySort={setFilterBySort}
-          />
-          <EventsList events={filteredEvents()} />
-        </Box>
-      </Box>
-    </main>
+    <Container>
+      <Filter
+        filteredByCategory={filteredByCategory}
+        setfilteredByCategory={setfilteredByCategory}
+        filterBySort={filterBySort}
+        setFilterBySort={setFilterBySort}
+      />
+      <EventsList events={filteredEvents()} />
+    </Container>
   );
 };
 

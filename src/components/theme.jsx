@@ -7,7 +7,8 @@ export const theme = {
     hightPriority: "#FF2B77",
     mediumPriority: "#E2A300",
     lowPriority: "#6BD475",
-    disabled: "#ACA7C3",
+    inActive: "#ACA7C3",
+    white: "#fff",
   },
   fonts: { main: "Poppins", title: "Alata" },
   fontSizes: {

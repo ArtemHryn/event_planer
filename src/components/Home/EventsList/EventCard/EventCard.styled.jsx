@@ -7,6 +7,9 @@ export const ListElement = styled.li`
   flex-direction: column;
   width: 272px;
   height: 480px;
+
+  background-color: ${(p) => p.theme.colors.white};
+
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
@@ -26,7 +29,7 @@ export const Filters = styled.p`
   padding: 6px 12px;
   align-items: center;
   border-radius: 8px;
-  background: #fff;
+  background: ${(p) => p.theme.colors.white};
 
   color: ${setPriorityColor};
   font-size: 14px;
@@ -38,7 +41,7 @@ export const Filters = styled.p`
 `;
 
 export const DateAndPlace = styled.p`
-  color: #7b61ff;
+  color: ${(p) => p.theme.colors.main};
   font-size: 14px;
   font-weight: 400;
   line-height: 1.71;
@@ -65,9 +68,9 @@ export const CardButton = styled(Link)`
   margin-left: auto;
 
   border-radius: 8px;
-  background: #7b61ff;
+  background: ${(p) => p.theme.colors.main};
 
-  color: #fff;
+  color: ${(p) => p.theme.colors.white};
   font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
