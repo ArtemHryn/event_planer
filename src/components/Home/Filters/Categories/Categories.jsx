@@ -9,6 +9,8 @@ import {
   ChoseFilter,
 } from "../Filters.styled";
 import { OverlayPanel } from "primereact/overlaypanel";
+import { CATEGORY } from "helper/constantes";
+import { setFilterInLocalStorage } from "helper/localStorage";
 
 export const buttons = [
   { name: "All" },
@@ -26,6 +28,7 @@ const Categories = ({ filteredByCategory, setfilteredByCategory }) => {
 
   const onChangeCategory = (e, name) => {
     setfilteredByCategory(name);
+    setFilterInLocalStorage(CATEGORY, name);
     op.current.hide(e);
   };
   return (

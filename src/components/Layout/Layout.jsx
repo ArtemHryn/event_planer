@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Search from "./Search/Search";
 import { Box } from "../Common/Box";
 import { DropdownLng, HeaderTitle } from "./Layout.styled";
 import { Outlet } from "react-router-dom";
+import Loader from "components/Loader/Loader";
 
 const Layout = () => {
   const [selectedLanguage, setSelectedLanguage] = useState({ name: "UK" });
@@ -36,7 +37,9 @@ const Layout = () => {
           <Search />
         </Box>
       </Box>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

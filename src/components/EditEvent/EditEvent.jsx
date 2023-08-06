@@ -8,7 +8,7 @@ const EditEvent = () => {
   return (
     <>
       <PageTopic title={"Edit event"} />
-      <EventForm event={state} />
+      <EventForm event={state} btnName="Save" />
     </>
   );
 };

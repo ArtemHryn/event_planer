@@ -3,12 +3,17 @@ import { Box } from "../components/Common/Box";
 import EventsList from "../components/Home/EventsList/EventsList";
 import Filter from "../components/Home/Filters/Filters";
 import { getAllEvents } from "helper/api";
+import { getFilterFromLocalStorage } from "helper/localStorage";
+import { CATEGORY, SORTED } from "helper/constantes";
 
 const Home = () => {
   const [events, setEvents] = useState([]);
-  const [filteredByCategory, setfilteredByCategory] = useState("All");
-  const [filterBySort, setFilterBySort] = useState(null);
-
+  const [filteredByCategory, setfilteredByCategory] = useState(
+    () => getFilterFromLocalStorage(CATEGORY) ?? "All"
+  );
+  const [filterBySort, setFilterBySort] = useState(
+    () => getFilterFromLocalStorage(SORTED) ?? null
+  );
 
   useEffect(() => {
     const events = async () => {
@@ -22,7 +27,6 @@ const Home = () => {
     events();
   }, []);
 
-
   const filteredEvents = () => {
     //filtered by category
     const byCategory =
@@ -30,7 +34,7 @@ const Home = () => {
         ? events
         : events.filter((event) => event.category === filteredByCategory);
     if (!filterBySort) return byCategory;
-    
+
     //sorted by
     switch (filterBySort.name) {
       case "by name":

@@ -6,7 +6,7 @@ const CreateEvent = () => {
   return (
     <>
       <PageTopic title={"Create new Event"} />
-      <EventForm />
+      <EventForm btnName="Add event" />
     </>
   );
 };

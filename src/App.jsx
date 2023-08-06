@@ -1,6 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Layout from "./components/Layout/Layout";
+import Loader from "components/Loader/Loader";
 
 import "primereact/resources/primereact.min.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,7 +14,7 @@ const EditEvent = lazy(() => import("./pages/EditEvent"));
 function App() {
   const location = useLocation();
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader />}>
       <Routes key={location.pathname} location={location}>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

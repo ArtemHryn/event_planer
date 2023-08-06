@@ -12,6 +12,8 @@ import {
   SortByArrows,
 } from "../Filters.styled";
 import { OverlayPanel } from "primereact/overlaypanel";
+import { setFilterInLocalStorage } from "helper/localStorage";
+import { SORTED } from "helper/constantes";
 
 const buttons = [
   { name: "by name", isLess: true },
@@ -27,6 +29,7 @@ const SortBy = ({ filterBySort, setFilterBySort }) => {
 
   const onChangeSort = (e, button) => {
     setFilterBySort(button);
+    setFilterInLocalStorage(SORTED, button);
     op.current.hide(e);
   };
   return (

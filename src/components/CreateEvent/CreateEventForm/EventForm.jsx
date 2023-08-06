@@ -19,7 +19,7 @@ import { addEventToDB, updateEvent } from "../../../helper/api";
 import { useNavigate } from "react-router-dom";
 import { errorToast, successfullToast } from "helper/toastNotofication";
 
-const EventForm = ({ event }) => {
+const EventForm = ({ event, btnName }) => {
   const navigate = useNavigate();
   const {
     register,
@@ -244,7 +244,7 @@ const EventForm = ({ event }) => {
           {errors.priority && <Error>{errors.priority.message}</Error>}
         </FormLabel>
       </Container>
-      <EventFormButton type="submit">Add Event</EventFormButton>
+      <EventFormButton type="submit">{btnName}</EventFormButton>
       <ToastContainer />
     </Form>
   );
